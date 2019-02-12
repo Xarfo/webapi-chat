@@ -1,22 +1,19 @@
-const express = require('express');
+const express = require('express'); // importing a CommonJS module
 
-const HubsRoute = require('./hubs/hubs-router.js');
+const hubsRouter = require('./hubs/hubs-router.js');
 
 const server = express();
 
 server.use(express.json());
 
-server.use('/api/hubs', hubRouter); //delegates 
+server.use('/api/hubs', hubsRouter);
 
-server.get('/', (req, res) => {
+server.get('/', async (req, res) => {
   res.send(`
-    <h2>Lambda Hubs API</h2>
+    <h2>Lambda Hubs API</h>
     <p>Welcome to the Lambda Hubs API</p>
   `);
 });
 
-
-
-
-// Export default server ES6  Modules
+// export default server; ES2015 Modules
 module.exports = server;
