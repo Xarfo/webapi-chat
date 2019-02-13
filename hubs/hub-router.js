@@ -121,6 +121,8 @@ router.get('/:id/messages', async (req, res) => {
 // add an endpoint for adding new message to a hub
 router.post('/:id/messages', async (req, res) => {
   const messageInfo = { ...req.body, hub_id: req.params.id };
+  console.log(req.body);
+  console.log(req.params);
 
   try {
     const message = await Hubs.addMessage(messageInfo);
