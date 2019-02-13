@@ -1,6 +1,6 @@
 const express = require('express'); // importing a CommonJS module
 
-const hubsRouter = require('./hubs/hubs-router.js');
+const hubsRouter = require('./hubs/hub-router.js');
 
 const server = express();
 
@@ -10,7 +10,7 @@ server.use('/api/hubs', hubsRouter);
 
 server.get('/', async (req, res) => {
   res.send(`
-    <h2>Lambda Hubs API</h>
+    <h2>Lambda Hubs API</h2>
     <p>Welcome to the Lambda Hubs API</p>
   `);
 });
